@@ -14,7 +14,7 @@ var path = require('path'),
 exports.create = function (req, res) {
   var article = new Article(req.body);
   article.user = req.user;
-
+  //console.log(req.body);
   article.save(function (err) {
     if (err) {
       return res.status(400).send({
@@ -30,6 +30,7 @@ exports.create = function (req, res) {
  * Show the current article
  */
 exports.read = function (req, res) {
+ // console.log(req.article);
   res.json(req.article);
 };
 
@@ -41,6 +42,8 @@ exports.update = function (req, res) {
 
   article.title = req.body.title;
   article.content = req.body.content;
+  article.content = req.body.content;
+
 
   article.save(function (err) {
     if (err) {
