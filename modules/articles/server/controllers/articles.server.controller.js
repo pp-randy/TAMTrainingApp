@@ -42,7 +42,7 @@ exports.update = function (req, res) {
 
   article.title = req.body.title;
   article.content = req.body.content;
-  article.content = req.body.content;
+  article.category = req.body.category;
 
 
   article.save(function (err) {
